@@ -19,7 +19,7 @@ public void deposit(double amount)
 	}
 	
 	else
-		System.out.println("Negative amount cannot be deposited in bank account!");
+		transactions.add("Failed Deposit of $"+amount);
 
 }
 
@@ -27,7 +27,7 @@ public void deposit(double amount)
 public void withdraw(double amount)
 {
 	if(balance<amount)
-		System.out.println("Your bank account doesnot have enough balance to withdraw your requested amount! ");
+		transactions.add("Failed withdrawl of $"+amount);
 	else
 	{
 		balance=balance - amount;
