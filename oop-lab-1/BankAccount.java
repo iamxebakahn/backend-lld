@@ -1,15 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankAccount
 {
 
 private double balance;
 private String ownerName;
+private List<String> transactions;
 
+//deposit method
 public void deposit(double amount)
 {
 	if(amount>0)
 	{
 		balance = balance + amount;
-		System.out.print("Amount deposited: "+ amount);
+		//System.out.print("Amount deposited: "+ amount);
+		transactions.add("Deposited $"+ amount);
 	}
 	
 	else
@@ -17,6 +23,7 @@ public void deposit(double amount)
 
 }
 
+//withdraw method
 public void withdraw(double amount)
 {
 	if(balance<amount)
@@ -24,7 +31,8 @@ public void withdraw(double amount)
 	else
 	{
 		balance=balance - amount;
-		System.out.print("Amount withdrawn: "+ amount);
+		//System.out.print("Amount withdrawn: "+ amount);
+		transactions.add("Withdrew $"+ amount);
 	}
 
 }
@@ -49,5 +57,29 @@ public void setOwnerName(String name)
 	this.ownerName=name;
 }
 
+//Default Constructor
+public BankAccount()
+{
+	balance =0;
+	ownerName ="Default";
+	transactions = new ArrayList<>();
+}
+
+//Parameterized Constructor
+public BankAccount(String ownerName, double balance)
+{
+	this.ownerName=ownerName;
+	this.balance=balance;
+	transactions = new ArrayList<>();
+
+}
+
+public printTransactionHistory()
+{
+	for(String str:transactions)
+	{
+		System.out.println(str);
+	}
+}
 
 }
