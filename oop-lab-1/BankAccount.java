@@ -27,14 +27,14 @@ public void deposit(double amount)
 public void withdraw(double amount)
 {
 	if(balance<amount)
-		transactions.add("Failed withdrawl of $"+amount);
-	else
-	{
+		transactions.add("Failed withdrawl of $"+amount+" .Failed withdrwal");
+
+	if(amount<=0)
+		transactions.add("Invalid withdrawl of $"+amount);
+
 		balance=balance - amount;
 		//System.out.print("Amount withdrawn: "+ amount);
 		transactions.add("Withdrew $"+ amount);
-	}
-
 }
 
 public double getBalance()
