@@ -26,11 +26,18 @@ public void deposit(double amount)
 //withdraw method
 public void withdraw(double amount)
 {
-	if(balance<amount)
-		transactions.add("Failed withdrawl of $"+amount+" .Failed withdrwal");
-
 	if(amount<=0)
+	{
 		transactions.add("Invalid withdrawl of $"+amount);
+		return;
+	}
+
+
+	if(balance<amount)
+	{
+		transactions.add("Failed withdrawl of $"+amount+" .Failed withdrwal");
+		return;
+	}
 
 		balance=balance - amount;
 		//System.out.print("Amount withdrawn: "+ amount);
