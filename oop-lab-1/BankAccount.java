@@ -19,7 +19,7 @@ public void deposit(double amount)
 	}
 	
 	else
-		System.out.print("Negative amount cannot be deposited in bank account!");		
+		System.out.println("Negative amount cannot be deposited in bank account!");
 
 }
 
@@ -27,7 +27,7 @@ public void deposit(double amount)
 public void withdraw(double amount)
 {
 	if(balance<amount)
-		System.out.print("Your bank account doesnot have enough balance to withdraw your requested amount! ");
+		System.out.println("Your bank account doesnot have enough balance to withdraw your requested amount! ");
 	else
 	{
 		balance=balance - amount;
@@ -74,7 +74,7 @@ public BankAccount(String ownerName, double balance)
 
 }
 
-public printTransactionHistory()
+public void printTransactionHistory()
 {
 	for(String str:transactions)
 	{
