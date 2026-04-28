@@ -1,6 +1,7 @@
 package library;
 
 import library.users.User;
+import library.users.Member;
 
 public abstract class Book implements Lendable {
     private String isbn; //M:B Task 2 Step 2.1
@@ -9,21 +10,40 @@ public abstract class Book implements Lendable {
     private boolean isAvailable; //M:B Task 2 Step 2.1
 
     @Override
-    public boolean lend(User user)  //M:B Task 2 Step 2.2
+    public boolean lend(User user)  //M:B Task 2 Step 2.2  M:C Task 4 Step 4.2
     {
-        if(isAvailable && user.canBorrowBooks())
-        {
-            isAvailable=false;
-            return true;
+        if (!(user instanceof Member)) {
+            System.out.println("Only members can borrow books.");
+            return false;
         }
 
-        return false;
+        Member member = (Member) user;
+
+        if (!isAvailable) {
+            System.out.println("Book is not available.");
+            return false;
+        }
+
+        if (!member.canBorrowBooks()) {
+            System.out.println("Borrowing limit reached.");
+            return false;
+        }
+
+        isAvailable = false;
+        member.incrementBorrowedBooks();
+
+        return true;
     }
 
     @Override
-    public void returnBook(User user)   //M:B Task 2 Step 2.2
+    public void returnBook(User user)   //M:B Task 2 Step 2.2  M:C Task 5 Step 5.1
     {
-        isAvailable=true;
+        if (user instanceof Member) {
+            Member member = (Member) user;
+            member.decrementBorrowedBooks();
+        }
+
+        isAvailable = true;  //M:C Task 5 Step 5.2
     }
 
     @Override

@@ -41,4 +41,21 @@ public class Member extends User   //M:A Task 4 Step 4.1
 
     //java: generateUniqueId() in library.users.Member cannot override generateUniqueId() in library.users.User
     //  overridden method is final */
+
+    //M:C Task 3 Step 4.2
+        public void incrementBorrowedBooks() {
+        borrowedBooksCount++;
+        }
+
+        public void decrementBorrowedBooks() {
+            if (borrowedBooksCount > 0) {
+                borrowedBooksCount--;
+            }
+        }
+
+        public int getBorrowedBooksCount()
+        {
+            return borrowedBooksCount;
+        }
+
 }
