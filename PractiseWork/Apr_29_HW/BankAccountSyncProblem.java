@@ -1,17 +1,16 @@
 package Apr_29_HW;
 
 public class BankAccountSyncProblem {
-
     /* Bank Account Synchronization (synchronized block and method)
-Objective
-Learn how to avoid race conditions using synchronized.
+        Objective
+        Learn how to avoid race conditions using synchronized.
 
-Problem Statement
-Implement a BankAccount class with a balance.
-Create multiple threads representing depositors and withdrawers.
-Simulate a race condition where multiple users deposit and withdraw simultaneously.
-Fix the issue using:
-synchronized blocks
-Measure execution time with and without synchronization. */
+        Problem Statement
+        Implement a BankAccount class with a balance.
+        Create multiple threads representing depositors and withdrawers.
+        Simulate a race condition where multiple users deposit and withdraw simultaneously.
+        Fix the issue using:
+        synchronized blocks
+        Measure execution time with and without synchronization. */
 }
 
