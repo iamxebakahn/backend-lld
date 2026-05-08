@@ -1,6 +1,8 @@
 package Apr_29_HW;
 
-public class BankAccountSyncProblem {
+import java.util.concurrent.Callable;
+
+public class DepositTask implements Callable<Void> {
     /* Bank Account Synchronization (synchronized block and method)
         Objective
         Learn how to avoid race conditions using synchronized.
@@ -12,5 +14,19 @@ public class BankAccountSyncProblem {
         Fix the issue using:
         synchronized blocks
         Measure execution time with and without synchronization. */
+
+    BankAccountSyncTask bankaccount;
+
+    public DepositTask(BankAccountSyncTask bankaccount) {
+        this.bankaccount = bankaccount;
+    }
+
+    @Override
+    public Void call() throws Exception {
+        for(int i=1;i<100000;i++)
+            bankaccount.deposit(i);
+
+        return null;
+    }
 }
 

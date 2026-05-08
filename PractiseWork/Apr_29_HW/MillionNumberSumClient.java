@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-public class Client
+public class MillionNumberSumClient
 {
     public static void main(String[] args) throws Exception{
         //Find sum of million numbers
