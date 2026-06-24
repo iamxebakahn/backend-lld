@@ -4,3 +4,4 @@ Parking Lot
     -[X]Requirement
     -[X]Visualization
     -[X]Entities
+    -[X]Relationships
