@@ -152,7 +152,7 @@ public class Client { // Milestone A: Task 4
         double mostexpensivebook = bookInventory.getAllItems().stream().map(book -> book.getPrice()).reduce(0.0,(price1,price2) -> price1>price2 ? price1:price2);
         System.out.println("Maximum Price : " + mostexpensivebook);
 
-        Book mostexpensivebook1 = bookInventory.getAllItems().stream().reduce((book11,book22) -> book11.getPrice() >book22.getPrice() ?book11 :book22).orElse(null);
+        Book mostexpensivebook1 = bookInventory.getAllItems().stream().reduce((book11,book22) -> book11.getPrice() >book22.getPrice() ? book11 :book22).orElse(null);
         if(mostexpensivebook1!=null){
             System.out.println("Most Expensive book name:"+mostexpensivebook1.getName()+"Most Expensive book price:"+mostexpensivebook1.getPrice());
         }
