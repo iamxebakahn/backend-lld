@@ -5,3 +5,4 @@ Parking Lot
     -[X]Visualization
     -[X]Entities
     -[X]Relationships
+    -[X]Class Diagram
