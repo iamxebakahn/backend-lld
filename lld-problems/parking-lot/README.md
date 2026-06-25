@@ -8,3 +8,4 @@ Parking Lot
     -[X]Class Diagram
     -[X]Design Patterns
     -[X]Sequence Diagrams
+    -[X]Schema Design
