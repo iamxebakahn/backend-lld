@@ -6,3 +6,5 @@ Parking Lot
     -[X]Entities
     -[X]Relationships
     -[X]Class Diagram
+    -[X]Design Patterns
+    -[X]Sequence Diagrams
