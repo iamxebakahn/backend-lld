@@ -9,3 +9,4 @@ Parking Lot
     -[X]Design Patterns
     -[X]Sequence Diagrams
     -[X]Schema Design
+    -[X]Project Structure
