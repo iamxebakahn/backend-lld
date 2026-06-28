@@ -24,7 +24,7 @@ BillStatus
 class ParkingLot{
 String name;
 ParkingLotStatus status;
-List<ParkingFlorr> floors;
+List<ParkingFloor> floors;
 List<Gate> gates;
 List<VehicleType> supportedVehicleTypes;
 }
