@@ -1,25 +1,50 @@
 package parkinglot.entity;
 
+import parkinglot.enums.GateStatus;
+import parkinglot.enums.GateType;
+
 public class Gate {
-    private String employeeId;
-    private String name;
-    private String phoneNumber;
+    private String gateNumber;
+    private GateType gateType;
+    private  Operator operator;
+    private GateStatus gateStatus;
 
-    public Gate(String employeeId, String name, String phoneNumber) {
-        this.employeeId = employeeId;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
+    public Gate(String gateNumber, GateType gateType, Operator operator) {
+        this.gateNumber = gateNumber;
+        this.gateType = gateType;
+        this.operator = operator;
+        this.gateStatus=GateStatus.OPEN;
     }
 
-    public String getEmployeeId() {
-        return employeeId;
+    public Operator getOperator() {
+        return operator;
     }
 
-    public String getName() {
-        return name;
+    public GateType getGateType() {
+        return gateType;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getGateNumber() {
+        return gateNumber;
+    }
+
+    public GateStatus getGateStatus() {
+        return gateStatus;
+    }
+
+    public boolean isOpen(){
+        return gateStatus = GateStatus.OPEN;
+    }
+
+    public void openGate(){
+        if(isOpen())
+            throw new IllegalStateException("Gate is already open");
+        gateStatus = GateStatus.OPEN;
+    }
+
+    public void closeGate(){
+        if(!isOpen())
+            throw new IllegalStateException("Gate is already closed");
+        gateStatus = GateStatus.CLOSED;
     }
 }
