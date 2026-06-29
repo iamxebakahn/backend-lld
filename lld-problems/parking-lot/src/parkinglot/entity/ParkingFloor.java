@@ -6,10 +6,10 @@ import parkinglot.enums.VehicleType;
 import java.util.List;
 
 public class ParkingFloor {
-    private String floorNumber;
+    private final String floorNumber;
     private FloorStatus floorStatus;
-    private List<ParkingSpot> parkingSpots;
-    private List<VehicleType> supportedvehicleTypes;
+    private final List<ParkingSpot> parkingSpots;
+    private final List<VehicleType> supportedvehicleTypes;
 
     public ParkingFloor(String floorNumber, List<ParkingSpot> parkingSpots, List<VehicleType> supportedvehicleTypes) {
         this.floorNumber = floorNumber;

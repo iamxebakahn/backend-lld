@@ -4,15 +4,16 @@ import parkinglot.enums.ParkingLotStatus;
 import parkinglot.enums.VehicleType;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ParkingLot {
-    private String parkingLotNumber;
-    private String name;
+    private final String parkingLotNumber;
+    private final String name;
     private ParkingLotStatus parkingLotStatus;
-    private List<ParkingFloor> parkingFloors;
-    private List<Gate> gates;
-    private List<VehicleType> supportedVehicleTypes;
+    private final List<ParkingFloor> parkingFloors;
+    private final List<Gate> gates;
+    private final List<VehicleType> supportedVehicleTypes;
 
     public ParkingLot(String parkingLotNumber, String name, List<VehicleType> supportedVehicleTypes) {
         this.parkingLotNumber = parkingLotNumber;
@@ -59,14 +60,14 @@ public class ParkingLot {
     }
 
     public List<Gate> getGates() {
-        return gates;
+        return Collections.unmodifiableList(gates);
     }
 
     public List<VehicleType> getSupportedVehicleTypes() {
-        return supportedVehicleTypes;
+        return Collections.unmodifiableList(supportedVehicleTypes);
     }
 
     public List<ParkingFloor> getParkingFloors() {
-        return parkingFloors;
+        return Collections.unmodifiableList(parkingFloors);
     }
 }

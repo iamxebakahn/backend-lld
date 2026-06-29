@@ -6,9 +6,9 @@ import parkinglot.enums.VehicleType;
 import java.util.List;
 
 public class ParkingSpot {
-    private String spotNumber;
+    private final String spotNumber;
     private SpotStatus status;
-    private List<VehicleType> supportedVehicleTypes;
+    private final List<VehicleType> supportedVehicleTypes;
 
     public ParkingSpot(String spotNumber, List<VehicleType> supportedVehicleTypes) {
         this.spotNumber = spotNumber;

@@ -3,10 +3,10 @@ package parkinglot.entity;
 import parkinglot.enums.VehicleType;
 
 public class Vehicle {
-    private String registrationNumber;
-    private String ownerName;
-    private String ownerContact;
-    private VehicleType vehicleType;
+    private final String registrationNumber;
+    private final String ownerName;
+    private final String ownerContact;
+    private final VehicleType vehicleType;
 
     public Vehicle(String registrationNumber, String ownerName, String ownerContact, VehicleType vehicleType) {
         this.registrationNumber = registrationNumber;

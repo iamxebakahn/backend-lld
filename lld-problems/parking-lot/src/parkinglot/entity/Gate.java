@@ -4,9 +4,9 @@ import parkinglot.enums.GateStatus;
 import parkinglot.enums.GateType;
 
 public class Gate {
-    private String gateNumber;
-    private GateType gateType;
-    private  Operator operator;
+    private final String gateNumber;
+    private final GateType gateType;
+    private final Operator operator;
     private GateStatus gateStatus;
 
     public Gate(String gateNumber, GateType gateType, Operator operator) {

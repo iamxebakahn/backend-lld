@@ -1,9 +1,9 @@
 package parkinglot.entity;
 
 public class Operator {
-    private String employeeId;
-    private String name;
-    private String phoneNumber;
+    private final String employeeId;
+    private final String name;
+    private final String phoneNumber;
 
     public Operator(String employeeId, String name, String phoneNumber) {
         this.employeeId = employeeId;

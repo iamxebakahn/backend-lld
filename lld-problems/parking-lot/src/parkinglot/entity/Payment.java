@@ -6,12 +6,12 @@ import parkinglot.enums.PaymentStatus;
 import java.time.LocalDateTime;
 
 public class Payment {
-    private String paymentId;
-    private Bill bill;
-    private double amount;
-    private LocalDateTime paymentTime;
+    private final String paymentId;
+    private final Bill bill;
+    private final double amount;
+    private final LocalDateTime paymentTime;
     private PaymentStatus paymentStatus;
-    private PaymentMode paymentMode;
+    private final PaymentMode paymentMode;
 
     public Payment(String paymentId, Bill bill, double amount, PaymentMode paymentMode) {
         this.paymentId = paymentId;

@@ -5,10 +5,10 @@ import parkinglot.enums.BillStatus;
 import java.time.LocalDateTime;
 
 public class Bill {
-    private String billNumber;
-    private Ticket ticket;
-    private LocalDateTime exitTime;
-    private double amount;
+    private final String billNumber;
+    private final Ticket ticket;
+    private final LocalDateTime exitTime;
+    private final double amount;
     private BillStatus billStatus;
 
     public Bill(String billNumber, Ticket ticket, double amount) {

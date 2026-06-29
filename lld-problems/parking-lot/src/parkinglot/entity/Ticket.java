@@ -3,12 +3,12 @@ package parkinglot.entity;
 import java.time.LocalDateTime;
 
 public class Ticket {
-    private String ticketNumber;
-    private LocalDateTime entrytime;
-    private Vehicle vehicle;
-    private ParkingSpot parkingSpot;
-    private Gate gate;
-    private Operator operator;
+    private final String ticketNumber;
+    private final LocalDateTime entrytime;
+    private final Vehicle vehicle;
+    private final ParkingSpot parkingSpot;
+    private final Gate gate;
+    private final Operator operator;
 
     public Ticket(String ticketNumber, Vehicle vehicle, ParkingSpot parkingSpot, Gate gate, Operator operator) {
         this.ticketNumber = ticketNumber;
