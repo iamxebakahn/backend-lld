@@ -32,7 +32,7 @@ public class ParkingFloor {
     }
 
     public boolean isOpen(){
-        return floorStatus = FloorStatus.OPEN;
+        return floorStatus == FloorStatus.OPEN;
     }
     public void openFloor(){
         if(isOpen())
@@ -67,6 +67,6 @@ public class ParkingFloor {
     }
 
     public List<VehicleType> getSupportedvehicleTypes() {
-        return Collections.unmodifiableList(supportedvehicleTypes);
+        return Collections.unmodifiableList(supportedVehicleTypes);
     }
 }

@@ -27,12 +27,12 @@ public class ParkingSpot {
     }
     public void occupy(){
         if(!isAvailable())
-            throw new IllegalStateException("Parking spoy is already occupied")
+            throw new IllegalStateException("Parking spoy is already occupied");
         this. status = SpotStatus.OCCUPIED;
     }
     public void release(){
         if(isAvailable())
-            throw new IllegalStateException("Parking Spot is already available")
+            throw new IllegalStateException("Parking Spot is already available");
         this.status = SpotStatus.AVAILABLE;
     }
 

@@ -50,7 +50,7 @@ public class Gate {
     }
 
     public boolean isOpen(){
-        return gateStatus = GateStatus.OPEN;
+        return gateStatus == GateStatus.OPEN;
     }
 
     public void openGate(){
