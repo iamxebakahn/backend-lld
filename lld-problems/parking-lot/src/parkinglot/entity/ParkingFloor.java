@@ -4,6 +4,7 @@ import parkinglot.enums.FloorStatus;
 import parkinglot.enums.VehicleType;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ParkingFloor {
@@ -62,10 +63,10 @@ public class ParkingFloor {
     }
 
     public List<ParkingSpot> getParkingSpots() {
-        return parkingSpots;
+        return Collections.unmodifiableList(parkingSpots);
     }
 
     public List<VehicleType> getSupportedvehicleTypes() {
-        return supportedvehicleTypes;
+        return Collections.unmodifiableList(supportedvehicleTypes);
     }
 }

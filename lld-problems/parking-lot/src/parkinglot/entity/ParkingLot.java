@@ -35,7 +35,7 @@ public class ParkingLot {
         }
         this.parkingLotNumber = parkingLotNumber;
         this.name = name;
-        this.supportedVehicleTypes = supportedVehicleTypes;
+        this.supportedVehicleTypes = new ArrayList<>(supportedVehicleTypes);
         this.parkingLotStatus = ParkingLotStatus.OPEN;
         this.parkingFloors = new ArrayList<>();
         this.gates = new ArrayList<>();
