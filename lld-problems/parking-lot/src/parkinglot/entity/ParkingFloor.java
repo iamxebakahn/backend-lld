@@ -45,6 +45,11 @@ public class ParkingFloor {
         floorStatus=FloorStatus.CLOSED;
     }
     public void addParkingSpot(ParkingSpot parkingSpot){
+        if (parkingSpot == null) {
+            throw new IllegalArgumentException(
+                    "Parking spot cannot be null."
+            );
+        }
         parkingSpots.add(parkingSpot);
     }
 
