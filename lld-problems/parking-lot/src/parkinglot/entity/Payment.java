@@ -14,6 +14,29 @@ public class Payment {
     private final PaymentMode paymentMode;
 
     public Payment(String paymentId, Bill bill, double amount, PaymentMode paymentMode) {
+        if (paymentId == null || paymentId.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Payment ID cannot be null or blank."
+            );
+        }
+
+        if (bill == null) {
+            throw new IllegalArgumentException(
+                    "Bill cannot be null."
+            );
+        }
+
+        if (amount < 0) {
+            throw new IllegalArgumentException(
+                    "Amount cannot be negative."
+            );
+        }
+
+        if (paymentMode == null) {
+            throw new IllegalArgumentException(
+                    "Payment mode cannot be null."
+            );
+        }
         this.paymentId = paymentId;
         this.bill = bill;
         this.amount = amount;

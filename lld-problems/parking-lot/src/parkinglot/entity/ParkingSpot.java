@@ -11,6 +11,10 @@ public class ParkingSpot {
     private final List<VehicleType> supportedVehicleTypes;
 
     public ParkingSpot(String spotNumber, List<VehicleType> supportedVehicleTypes) {
+        if(spotNumber == null || spotNumber.isBlank())
+            throw new IllegalStateException("Spot number cannot be null or blank");
+        if(supportedVehicleTypes == null || supportedVehicleTypes.isEmpty())
+            throw new IllegalStateException("Supported vehicle types cannot be null or empty");
         this.spotNumber = spotNumber;
         this.supportedVehicleTypes = supportedVehicleTypes;
         this.status = SpotStatus.AVAILABLE;

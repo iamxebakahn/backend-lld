@@ -16,6 +16,23 @@ public class ParkingLot {
     private final List<VehicleType> supportedVehicleTypes;
 
     public ParkingLot(String parkingLotNumber, String name, List<VehicleType> supportedVehicleTypes) {
+        if (parkingLotNumber == null || parkingLotNumber.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Parking lot number cannot be null or blank."
+            );
+        }
+
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Parking lot name cannot be null or blank."
+            );
+        }
+
+        if (supportedVehicleTypes == null || supportedVehicleTypes.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Supported vehicle types cannot be null or empty."
+            );
+        }
         this.parkingLotNumber = parkingLotNumber;
         this.name = name;
         this.supportedVehicleTypes = supportedVehicleTypes;

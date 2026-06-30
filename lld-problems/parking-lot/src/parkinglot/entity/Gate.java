@@ -10,6 +10,23 @@ public class Gate {
     private GateStatus gateStatus;
 
     public Gate(String gateNumber, GateType gateType, Operator operator) {
+        if (gateNumber == null || gateNumber.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Gate number cannot be null or blank."
+            );
+        }
+
+        if (gateType == null) {
+            throw new IllegalArgumentException(
+                    "Gate type cannot be null."
+            );
+        }
+
+        if (operator == null) {
+            throw new IllegalArgumentException(
+                    "Operator cannot be null."
+            );
+        }
         this.gateNumber = gateNumber;
         this.gateType = gateType;
         this.operator = operator;

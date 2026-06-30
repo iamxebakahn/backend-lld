@@ -12,6 +12,23 @@ public class Bill {
     private BillStatus billStatus;
 
     public Bill(String billNumber, Ticket ticket, double amount) {
+        if (billNumber == null || billNumber.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Bill number cannot be null or blank."
+            );
+        }
+
+        if (ticket == null) {
+            throw new IllegalArgumentException(
+                    "Ticket cannot be null."
+            );
+        }
+
+        if (amount < 0) {
+            throw new IllegalArgumentException(
+                    "Amount cannot be negative."
+            );
+        }
         this.billNumber = billNumber;
         this.ticket = ticket;
         this.amount = amount;

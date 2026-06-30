@@ -3,18 +3,30 @@ package parkinglot.entity;
 import parkinglot.enums.FloorStatus;
 import parkinglot.enums.VehicleType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingFloor {
     private final String floorNumber;
     private FloorStatus floorStatus;
     private final List<ParkingSpot> parkingSpots;
-    private final List<VehicleType> supportedvehicleTypes;
+    private final List<VehicleType> supportedVehicleTypes;
 
-    public ParkingFloor(String floorNumber, List<ParkingSpot> parkingSpots, List<VehicleType> supportedvehicleTypes) {
+    public ParkingFloor(String floorNumber, List<VehicleType> supportedVehicleTypes) {
+        if (floorNumber == null || floorNumber.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Floor number cannot be null or blank."
+            );
+        }
+
+        if (supportedVehicleTypes == null || supportedVehicleTypes.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Supported vehicle types cannot be null or empty."
+            );
+        }
         this.floorNumber = floorNumber;
-        this.parkingSpots = parkingSpots;
-        this.supportedvehicleTypes = supportedvehicleTypes;
+        this.supportedVehicleTypes = new ArrayList<>(supportedVehicleTypes);
+        this.parkingSpots = new ArrayList<>();
         this.floorStatus = FloorStatus.OPEN;
     }
 
