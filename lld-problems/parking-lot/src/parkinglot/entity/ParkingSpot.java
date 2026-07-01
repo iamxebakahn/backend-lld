@@ -47,4 +47,10 @@ public class ParkingSpot {
     public List<VehicleType> getSupportedVehicleTypes() {
         return Collections.unmodifiableList(supportedVehicleTypes);
     }
+
+    public boolean supportsVehicle(VehicleType vehicleType){
+        if(vehicleType == null)
+            throw new IllegalArgumentException("Vehicle Type cannot be null");
+        return supportedVehicleTypes.contains(vehicleType);
+    }
 }

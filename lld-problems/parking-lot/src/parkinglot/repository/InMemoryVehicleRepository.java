@@ -12,9 +12,9 @@ public class InMemoryVehicleRepository implements VehicleRepository {
     @Override
     public void save(Vehicle vehicle) {
         if(vehicle == null)
-            throw new IllegalStateException("Vehicle cannot be null");
+            throw new IllegalArgumentException("Vehicle cannot be null");
         if(vehicles.containsKey(vehicle.getRegistrationNumber()))
-            throw new IllegalStateException("Vehicle with registration number "+vehicle.getRegistrationNumber() + +" already exists");
+            throw new IllegalArgumentException("Vehicle with registration number "+vehicle.getRegistrationNumber() + " already exists");
 
         vehicles.put(vehicle.getRegistrationNumber(),vehicle);
     }
