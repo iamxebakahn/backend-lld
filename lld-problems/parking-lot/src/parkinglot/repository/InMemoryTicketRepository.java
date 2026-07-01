@@ -12,7 +12,7 @@ public class InMemoryTicketRepository implements TicketRepository{
     }
 
     @Override
-    void save(Ticket ticket) {
+    public void save(Ticket ticket) {
         if (ticket == null) {
             throw new IllegalArgumentException(
                     "Ticket cannot be null."
@@ -31,7 +31,7 @@ public class InMemoryTicketRepository implements TicketRepository{
     }
 
     @Override
-    Optional<Ticket> findByTicketNumber(String ticketNumber) {
+    public Optional<Ticket> findByTicketNumber(String ticketNumber) {
         if (ticketNumber == null || ticketNumber.isBlank()) {
             throw new IllegalArgumentException(
                     "Ticket number cannot be null or blank."
@@ -44,7 +44,7 @@ public class InMemoryTicketRepository implements TicketRepository{
     }
 
     @Override
-    List<Ticket> findAll() {
+    public List<Ticket> findAll() {
         return Collections.unmodifiableList(new ArrayList<>(tickets.values()));
     }
 }
