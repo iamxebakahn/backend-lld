@@ -4,6 +4,8 @@ import parkinglot.entity.ParkingLot;
 import parkinglot.entity.ParkingSpot;
 import parkinglot.entity.Vehicle;
 
+import java.util.Optional;
+
 public interface SpotAssignmentStrategy {
-    ParkingSpot assignSpot(ParkingLot parkingLot, Vehicle);
+    Optional<ParkingSpot> assignSpot(ParkingLot parkingLot, Vehicle);
 }
